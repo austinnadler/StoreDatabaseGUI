@@ -1,0 +1,12 @@
+C:\Users\Austin\source\repos\DataGridVew Test\bin\Debug\DataGridVew Test.exe.config
+C:\Users\Austin\source\repos\DataGridVew Test\bin\Debug\DataGridVew Test.exe
+C:\Users\Austin\source\repos\DataGridVew Test\bin\Debug\DataGridVew Test.pdb
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\DataGridVew Test.csprojAssemblyReference.cache
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\DataGridVew_Test.Properties.Resources.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\DataGridVew Test.csproj.GenerateResource.cache
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\DataGridVew Test.csproj.CoreCompileInputs.cache
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\DataGridVew Test.exe
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\DataGridVew Test.pdb
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\DataGridVew_Test.Customers.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\DataGridVew_Test.Home.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\DataGridVew_Test.Orders.resources

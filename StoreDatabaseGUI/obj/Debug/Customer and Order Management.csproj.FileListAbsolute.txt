@@ -1,0 +1,16 @@
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer and Order Management.csprojAssemblyReference.cache
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer and Order Management.csproj.GenerateResource.cache
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer and Order Management.csproj.CoreCompileInputs.cache
+C:\Users\Austin\source\repos\DataGridVew Test\bin\Debug\Customer and Order Management.exe.config
+C:\Users\Austin\source\repos\DataGridVew Test\bin\Debug\Customer and Order Management.exe
+C:\Users\Austin\source\repos\DataGridVew Test\bin\Debug\Customer and Order Management.pdb
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer_and_Order_Management.Properties.Resources.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer and Order Management.exe
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer and Order Management.pdb
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\StoreDatabaseGUI.Home.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer_and_Order_Management.SelectOrderItem.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\StoreDatabaseGUI.CustomerViewForm.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer_and_Order_Management.NewOrderForm.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\StoreDatabaseGUI.OrderViewForm.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer_and_Order_Management.ItemManagementForm.resources
+C:\Users\Austin\source\repos\DataGridVew Test\obj\Debug\Customer_and_Order_Management.SelectCustomerForOrderForm.resources

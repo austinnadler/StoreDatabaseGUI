@@ -1,0 +1,48 @@
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\bin\Debug\Customer and Order Management.exe.config
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\bin\Debug\Customer and Order Management.exe
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\bin\Debug\Customer and Order Management.pdb
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\StoreDatabaseGUI.csprojAssemblyReference.cache
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\StoreDatabaseGUI.CustomerViewForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\StoreDatabaseGUI.Home.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\Customer_and_Order_Management.ItemManagementForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\Customer_and_Order_Management.NewOrderForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\StoreDatabaseGUI.OrderViewForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\Customer_and_Order_Management.Properties.Resources.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\Customer_and_Order_Management.SelectCustomerForOrderForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\Customer_and_Order_Management.SelectOrderItem.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\StoreDatabaseGUI.csproj.GenerateResource.cache
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\StoreDatabaseGUI.csproj.CoreCompileInputs.cache
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\Customer and Order Management.exe
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\DataGridVew Test\obj\Debug\Customer and Order Management.pdb
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\bin\Debug\Customer and Order Management.exe.config
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\bin\Debug\Customer and Order Management.exe
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\bin\Debug\Customer and Order Management.pdb
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.csprojAssemblyReference.cache
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.CustomerViewForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.Home.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.ItemManagementForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.NewOrderForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.OrderViewForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.Properties.Resources.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.SelectCustomerForOrderForm.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.SelectOrderItem.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.csproj.GenerateResource.cache
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.csproj.CoreCompileInputs.cache
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer and Order Management.exe
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer and Order Management.pdb
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\bin\Debug\Customer and Order Management.exe.config
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\bin\Debug\Customer and Order Management.exe
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\bin\Debug\Customer and Order Management.pdb
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.csprojAssemblyReference.cache
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.CustomerViewForm.resources
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.Home.resources
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.ItemManagementForm.resources
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.NewOrderForm.resources
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.OrderViewForm.resources
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.Properties.Resources.resources
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.SelectCustomerForOrderForm.resources
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.SelectOrderItem.resources
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.csproj.GenerateResource.cache
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.csproj.CoreCompileInputs.cache
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer and Order Management.exe
+C:\Users\austi\OneDrive\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer and Order Management.pdb
