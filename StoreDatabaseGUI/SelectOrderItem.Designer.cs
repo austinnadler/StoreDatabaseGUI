@@ -214,7 +214,7 @@
             this.MinimumSize = new System.Drawing.Size(587, 489);
             this.Name = "SelectOrderItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SelectOrderItem";
+            this.Text = "Select Items";
             this.Load += new System.EventHandler(this.SelectOrderItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);

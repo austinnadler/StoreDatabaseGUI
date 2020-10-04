@@ -242,6 +242,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewOrder";
             this.Activated += new System.EventHandler(this.btnRefresh_Click);
+            this.Text = "New Order";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewOrder_Close);
             this.Load += new System.EventHandler(this.NewOrderForm_Load);
             this.gpCustomer.ResumeLayout(false);
