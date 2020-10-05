@@ -40,11 +40,11 @@ namespace Customer_and_Order_Management
                 da.Fill(dataTable);
                 connection.Close();
                 da.Dispose();
-                dgvItems.DataSource = dataTable; // Put the DataTable into the DataGridView
+                dgvCustomer.DataSource = dataTable; // Put the DataTable into the DataGridView
 
                 // Format the dgv
-                dgvItems.AutoResizeColumns();
-                dgvItems.ClearSelection();
+                dgvCustomer.AutoResizeColumns();
+                dgvCustomer.ClearSelection();
             }
             catch(Exception ex)
             {
@@ -61,32 +61,30 @@ namespace Customer_and_Order_Management
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            if(customerId != null)
-            {
-                parent.txtCustomerId.Text = customerId.ToString();
-                this.Close();
-            }
+            selectCustomer();
         }
 
         private void dgvItems_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dgvItems.Rows[e.RowIndex];
+                DataGridViewRow row = dgvCustomer.Rows[e.RowIndex];
                 customerId = (int)row.Cells[0].Value;
+                customerName = (string)row.Cells[1].Value;
             }
         }
 
         private void dgvItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            selectCustomer();
+        }
+
+        private void selectCustomer()
+        {
+            if(dgvCustomer.CurrentCell != null)
             {
-                DataGridViewRow row = dgvItems.Rows[e.RowIndex];
-                customerId = (int)row.Cells[0].Value;
-                customerName = row.Cells[1].Value.ToString();
-            }
-            if (customerId != null)
-            {   // Set fields on the parent form
+                customerId = (int)dgvCustomer.Rows[dgvCustomer.CurrentCell.RowIndex].Cells[0].Value;
+                customerName = (string)dgvCustomer.Rows[dgvCustomer.CurrentCell.RowIndex].Cells[1].Value;
                 parent.txtCustomerId.Text = customerId.ToString();
                 parent.txtCustomerName.Text = customerName;
                 this.Close();

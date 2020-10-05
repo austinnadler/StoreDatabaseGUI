@@ -35,5 +35,10 @@ namespace StoreDatabaseGUI
             ItemManagementForm imf = new ItemManagementForm();
             imf.Show();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

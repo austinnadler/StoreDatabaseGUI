@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btnSelect = new System.Windows.Forms.Button();
-            this.dgvItems = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelect
@@ -43,44 +43,44 @@
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // dgvItems
+            // dgvCustomer
             // 
-            this.dgvItems.AllowUserToAddRows = false;
-            this.dgvItems.AllowUserToDeleteRows = false;
-            this.dgvItems.AllowUserToResizeRows = false;
-            this.dgvItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Location = new System.Drawing.Point(5, 12);
-            this.dgvItems.Name = "dgvItems";
-            this.dgvItems.ReadOnly = true;
-            this.dgvItems.RowHeadersVisible = false;
-            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(650, 264);
-            this.dgvItems.TabIndex = 2;
-            this.dgvItems.TabStop = false;
-            this.dgvItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
-            this.dgvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellDoubleClick);
+            this.dgvCustomer.AllowUserToAddRows = false;
+            this.dgvCustomer.AllowUserToDeleteRows = false;
+            this.dgvCustomer.AllowUserToResizeRows = false;
+            this.dgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Location = new System.Drawing.Point(5, 12);
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.RowHeadersVisible = false;
+            this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCustomer.Size = new System.Drawing.Size(650, 264);
+            this.dgvCustomer.TabIndex = 2;
+            this.dgvCustomer.TabStop = false;
+            this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
+            this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellDoubleClick);
             // 
             // SelectCustomerForOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 313);
-            this.Controls.Add(this.dgvItems);
+            this.Controls.Add(this.dgvCustomer);
             this.Controls.Add(this.btnSelect);
             this.MaximumSize = new System.Drawing.Size(674, 352);
             this.MinimumSize = new System.Drawing.Size(674, 352);
             this.Name = "SelectCustomerForOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SelectCustomerForOrderForm";
+            this.Text = "Select Customer";
             this.Load += new System.EventHandler(this.SelectCustomerForOrderForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.DataGridView dgvItems;
+        private System.Windows.Forms.DataGridView dgvCustomer;
     }
 }

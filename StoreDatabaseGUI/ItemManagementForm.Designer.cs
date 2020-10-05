@@ -200,7 +200,7 @@
             this.MinimumSize = new System.Drawing.Size(475, 677);
             this.Name = "ItemManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewItemForm";
+            this.Text = "Items";
             this.Load += new System.EventHandler(this.ItemManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);

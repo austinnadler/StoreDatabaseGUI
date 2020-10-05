@@ -41,9 +41,11 @@
             this.lblQty = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.lblOrderId = new System.Windows.Forms.Label();
-            this.txtOrderId = new System.Windows.Forms.TextBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.dgvCart = new System.Windows.Forms.DataGridView();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvItems
@@ -51,20 +53,22 @@
             this.dgvItems.AllowUserToAddRows = false;
             this.dgvItems.AllowUserToResizeRows = false;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Location = new System.Drawing.Point(15, 106);
+            this.dgvItems.Location = new System.Drawing.Point(9, 121);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersVisible = false;
+            this.dgvItems.RowHeadersWidth = 62;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(544, 332);
+            this.dgvItems.Size = new System.Drawing.Size(347, 370);
             this.dgvItems.TabIndex = 60;
+            this.dgvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellDoubleClick);
             this.dgvItems.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvItems_CellMouseClick);
             // 
             // lblItemId
             // 
             this.lblItemId.AutoSize = true;
-            this.lblItemId.Location = new System.Drawing.Point(25, 57);
+            this.lblItemId.Location = new System.Drawing.Point(210, 21);
             this.lblItemId.Name = "lblItemId";
             this.lblItemId.Size = new System.Drawing.Size(41, 13);
             this.lblItemId.TabIndex = 61;
@@ -72,7 +76,7 @@
             // 
             // txtItemId
             // 
-            this.txtItemId.Location = new System.Drawing.Point(72, 54);
+            this.txtItemId.Location = new System.Drawing.Point(257, 19);
             this.txtItemId.Name = "txtItemId";
             this.txtItemId.ReadOnly = true;
             this.txtItemId.Size = new System.Drawing.Size(100, 20);
@@ -81,7 +85,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(72, 80);
+            this.txtName.Location = new System.Drawing.Point(257, 44);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(100, 20);
@@ -91,7 +95,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(10, 83);
+            this.lblName.Location = new System.Drawing.Point(195, 47);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(56, 13);
             this.lblName.TabIndex = 63;
@@ -99,7 +103,7 @@
             // 
             // txtMfg
             // 
-            this.txtMfg.Location = new System.Drawing.Point(263, 53);
+            this.txtMfg.Location = new System.Drawing.Point(435, 19);
             this.txtMfg.Name = "txtMfg";
             this.txtMfg.ReadOnly = true;
             this.txtMfg.Size = new System.Drawing.Size(100, 20);
@@ -109,7 +113,7 @@
             // lblMfg
             // 
             this.lblMfg.AutoSize = true;
-            this.lblMfg.Location = new System.Drawing.Point(187, 56);
+            this.lblMfg.Location = new System.Drawing.Point(361, 21);
             this.lblMfg.Name = "lblMfg";
             this.lblMfg.Size = new System.Drawing.Size(70, 13);
             this.lblMfg.TabIndex = 65;
@@ -117,7 +121,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(263, 79);
+            this.txtPrice.Location = new System.Drawing.Point(435, 41);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
@@ -127,7 +131,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(226, 82);
+            this.lblPrice.Location = new System.Drawing.Point(402, 44);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(31, 13);
             this.lblPrice.TabIndex = 67;
@@ -135,7 +139,7 @@
             // 
             // txtQty
             // 
-            this.txtQty.Location = new System.Drawing.Point(459, 49);
+            this.txtQty.Location = new System.Drawing.Point(435, 65);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(100, 20);
             this.txtQty.TabIndex = 0;
@@ -145,7 +149,7 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
-            this.lblQty.Location = new System.Drawing.Point(407, 52);
+            this.lblQty.Location = new System.Drawing.Point(385, 68);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(46, 13);
             this.lblQty.TabIndex = 69;
@@ -153,17 +157,17 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(484, 76);
+            this.btnAdd.Location = new System.Drawing.Point(361, 257);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(33, 23);
             this.btnAdd.TabIndex = 71;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = ">>";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(403, 76);
+            this.btnClear.Location = new System.Drawing.Point(9, 92);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 72;
@@ -171,32 +175,50 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // lblOrderId
+            // btnRemove
             // 
-            this.lblOrderId.AutoSize = true;
-            this.lblOrderId.Location = new System.Drawing.Point(19, 15);
-            this.lblOrderId.Name = "lblOrderId";
-            this.lblOrderId.Size = new System.Drawing.Size(47, 13);
-            this.lblOrderId.TabIndex = 73;
-            this.lblOrderId.Text = "Order ID";
+            this.btnRemove.Location = new System.Drawing.Point(361, 287);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(33, 23);
+            this.btnRemove.TabIndex = 73;
+            this.btnRemove.Text = "<<";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // txtOrderId
+            // dgvCart
             // 
-            this.txtOrderId.Location = new System.Drawing.Point(72, 12);
-            this.txtOrderId.Name = "txtOrderId";
-            this.txtOrderId.ReadOnly = true;
-            this.txtOrderId.Size = new System.Drawing.Size(100, 20);
-            this.txtOrderId.TabIndex = 74;
-            this.txtOrderId.TabStop = false;
-            this.txtOrderId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dgvCart.AllowUserToAddRows = false;
+            this.dgvCart.AllowUserToResizeRows = false;
+            this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCart.Location = new System.Drawing.Point(399, 121);
+            this.dgvCart.MultiSelect = false;
+            this.dgvCart.Name = "dgvCart";
+            this.dgvCart.ReadOnly = true;
+            this.dgvCart.RowHeadersVisible = false;
+            this.dgvCart.RowHeadersWidth = 62;
+            this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCart.Size = new System.Drawing.Size(347, 370);
+            this.dgvCart.TabIndex = 74;
+            this.dgvCart.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellDoubleClick);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(339, 513);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 75;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // SelectOrderItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 450);
-            this.Controls.Add(this.txtOrderId);
-            this.Controls.Add(this.lblOrderId);
+            this.ClientSize = new System.Drawing.Size(756, 555);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.dgvCart);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtQty);
@@ -210,13 +232,13 @@
             this.Controls.Add(this.txtItemId);
             this.Controls.Add(this.lblItemId);
             this.Controls.Add(this.dgvItems);
-            this.MaximumSize = new System.Drawing.Size(587, 489);
-            this.MinimumSize = new System.Drawing.Size(587, 489);
+            this.MinimumSize = new System.Drawing.Size(585, 483);
             this.Name = "SelectOrderItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Items";
             this.Load += new System.EventHandler(this.SelectOrderItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,7 +259,8 @@
         private System.Windows.Forms.Label lblQty;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Label lblOrderId;
-        private System.Windows.Forms.TextBox txtOrderId;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.DataGridView dgvCart;
+        private System.Windows.Forms.Button btnSave;
     }
 }

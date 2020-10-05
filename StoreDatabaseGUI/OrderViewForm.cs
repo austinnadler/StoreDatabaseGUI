@@ -90,7 +90,7 @@ namespace StoreDatabaseGUI
             txtOrderId.Text = "";
             txtCustomerId.Text = "";
             txtCustomerName.Text = "";
-            cboOrderStatus.Text = "";
+            cboOrderStatus.Text = null;
             txtTotalPrice.Text = "";
             txtCreatedOn.Text = "";
             txtUpdatedOn.Text = "";
