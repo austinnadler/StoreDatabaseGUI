@@ -55,7 +55,10 @@ namespace StoreDatabaseGUI
 
         private void clearFields()
         {
-            txtId.Text = txtFirst.Text = txtLast.Text = txtPhone.Text = txtEmail.Text = txtStreetAddress.Text = txtCity.Text = cboState.Text = txtZip.Text = "";
+            dgvCustomers.ClearSelection();
+            txtId.Text = txtFirst.Text = txtLast.Text = txtPhone.Text = txtEmail.Text = txtStreetAddress.Text = txtCity.Text = txtZip.Text = "";
+            cboState.Text = null;
+            btnSave.Enabled = btnInsert.Enabled = btnDelete.Enabled = false;
         }
 
         /// <summary>
@@ -95,23 +98,27 @@ namespace StoreDatabaseGUI
             loadCustomerData();
         }
        
-        private void dgvCustomers_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        private void dgvCustomers_SelectionChanged(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (dgvCustomers.CurrentCell != null)
             {
-                DataGridViewRow row     = dgvCustomers.Rows[e.RowIndex];
-                txtId.Text              = row.Cells[0].Value.ToString();
-                txtFirst.Text           = row.Cells[1].Value.ToString();
-                txtLast.Text            = row.Cells[2].Value.ToString();
-                txtPhone.Text           = row.Cells[3].Value.ToString();
-                txtEmail.Text           = row.Cells[4].Value.ToString();
-                txtStreetAddress.Text   = row.Cells[5].Value.ToString();
-                txtCity.Text            = row.Cells[6].Value.ToString();
-                cboState.Text           = row.Cells[7].Value.ToString();
-                txtZip.Text             = row.Cells[8].Value.ToString();
+                DataGridViewRow row = dgvCustomers.Rows[dgvCustomers.CurrentCell.RowIndex];
+                txtId.Text = row.Cells[0].Value.ToString();
+                txtFirst.Text = row.Cells[1].Value.ToString();
+                txtLast.Text = row.Cells[2].Value.ToString();
+                txtPhone.Text = row.Cells[3].Value.ToString();
+                txtEmail.Text = row.Cells[4].Value.ToString();
+                txtStreetAddress.Text = row.Cells[5].Value.ToString();
+                txtCity.Text = row.Cells[6].Value.ToString();
+                cboState.Text = row.Cells[7].Value.ToString();
+                txtZip.Text = row.Cells[8].Value.ToString();
+                btnSave.Enabled = true;
+                btnInsert.Enabled = true;
+                btnDelete.Enabled = true;
             }
         }
-       
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtFirst.Text != "" && txtLast.Text != "")
@@ -251,8 +258,30 @@ namespace StoreDatabaseGUI
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearFields();
-            dgvCustomers.ClearSelection();
         }
-    #endregion
+
+        #endregion
+
+        private void txtFirst_TextChanged(object sender, EventArgs e)
+        {
+            enableSave();
+        }
+
+        private void txtLast_TextChanged(object sender, EventArgs e)
+        {
+            enableSave();
+        }
+
+        private void enableSave()
+        {
+            if (txtFirst.Text != "" && txtLast.Text != "")
+            {
+                btnSave.Enabled = btnInsert.Enabled = true;
+            }
+            else
+            {
+                btnSave.Enabled = btnInsert.Enabled = false;
+            }
+        }
     }
 }

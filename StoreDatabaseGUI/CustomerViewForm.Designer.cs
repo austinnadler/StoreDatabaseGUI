@@ -72,7 +72,7 @@
             this.dgvCustomers.Size = new System.Drawing.Size(960, 599);
             this.dgvCustomers.TabIndex = 0;
             this.dgvCustomers.TabStop = false;
-            this.dgvCustomers.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCustomers_CellMouseClick);
+            this.dgvCustomers.SelectionChanged += new System.EventHandler(this.dgvCustomers_SelectionChanged);
             // 
             // btnRefresh
             // 
@@ -124,12 +124,13 @@
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Location = new System.Drawing.Point(406, 121);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 8;
             this.btnSave.TabStop = false;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Submit";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -139,6 +140,7 @@
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(158, 20);
             this.txtLast.TabIndex = 1;
+            this.txtLast.TextChanged += new System.EventHandler(this.txtLast_TextChanged);
             // 
             // txtPhone
             // 
@@ -161,6 +163,7 @@
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(158, 20);
             this.txtFirst.TabIndex = 0;
+            this.txtFirst.TextChanged += new System.EventHandler(this.txtFirst_TextChanged);
             // 
             // lblStreetAddress
             // 

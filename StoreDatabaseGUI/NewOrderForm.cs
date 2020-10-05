@@ -16,7 +16,6 @@ namespace Customer_and_Order_Management
     {
         private const string connectionString = "Server=localhost;Database=Store;Integrated Security=True";
         private OrderViewForm parent = null;
-        private int? orderItemId = null;
 
         public NewOrderForm(OrderViewForm parent)
         {
@@ -24,19 +23,21 @@ namespace Customer_and_Order_Management
             this.parent = parent;
         }
 
-    #region Utilities
-
+        #region Utilities
+        private void enableSubmit()
+        {
+            if (txtCustomerId.Text != "" && txtTotalPrice.Text != "")
+            {
+                btnSubmit.Enabled = true;
+            }
+        }
         #endregion
 
-    #region Events
-        private void dgv_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        #region Events
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvOrderItems.Rows[e.RowIndex];
-                int orderItemId = (int)row.Cells[0].Value;
-
-            }
+            SelectOrderItem child = new SelectOrderItem(this);
+            child.Show();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -99,26 +100,21 @@ namespace Customer_and_Order_Management
             sc.Show();
         }
 
-
-        private void dgvOrderItems_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvOrderItems.Rows[e.RowIndex];
-                orderItemId = (int)row.Cells[0].Value;
-            }
-        }
         #endregion
 
-        private void NewOrderForm_Load(object sender, EventArgs e)
+        private void txtCustomerId_TextChanged(object sender, EventArgs e)
         {
-
+            enableSubmit();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void txtTotalPrice_TextChanged(object sender, EventArgs e)
         {
-            SelectOrderItem child = new SelectOrderItem(this);
-            child.Show();
+            enableSubmit();
+        }
+
+        private void dgvOrderItems_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvOrderItems.ClearSelection();
         }
     }
 }

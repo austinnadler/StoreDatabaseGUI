@@ -59,7 +59,7 @@
             this.dgvItems.Size = new System.Drawing.Size(430, 443);
             this.dgvItems.TabIndex = 1;
             this.dgvItems.TabStop = false;
-            this.dgvItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
+            this.dgvItems.SelectionChanged += new System.EventHandler(this.dgvItems_SelectionChanged);
             // 
             // txtId
             // 
@@ -69,6 +69,7 @@
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 2;
             this.txtId.TabStop = false;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // txtPrice
             // 
@@ -76,6 +77,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
             this.txtPrice.TabIndex = 2;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged_1);
             // 
             // txtMfg
             // 
@@ -83,6 +85,7 @@
             this.txtMfg.Name = "txtMfg";
             this.txtMfg.Size = new System.Drawing.Size(166, 20);
             this.txtMfg.TabIndex = 0;
+            this.txtMfg.TextChanged += new System.EventHandler(this.txtMfg_TextChanged);
             // 
             // txtName
             // 
@@ -90,6 +93,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(166, 20);
             this.txtName.TabIndex = 1;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lblItemId
             // 
@@ -129,11 +133,12 @@
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Location = new System.Drawing.Point(12, 128);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Submit";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -149,6 +154,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(371, 128);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -169,6 +175,7 @@
             // 
             // btnInsert
             // 
+            this.btnInsert.Enabled = false;
             this.btnInsert.Location = new System.Drawing.Point(93, 128);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 23);

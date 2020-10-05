@@ -35,23 +35,27 @@ namespace Customer_and_Order_Management
             this.custId = custId;
         }
 
-        private void dgvItems_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        #region Events 
+        private void dgvItems_SelectionChanged(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (dgvItems.CurrentCell != null)
             {
-                DataGridViewRow row = dgvItems.Rows[e.RowIndex];
+                DataGridViewRow row = dgvItems.Rows[dgvItems.CurrentCell.RowIndex];
                 txtItemId.Text = row.Cells[0].Value.ToString();
                 txtMfg.Text = row.Cells[1].Value.ToString();
                 txtName.Text = row.Cells[2].Value.ToString();
                 txtPrice.Text = row.Cells[3].Value.ToString();
-                txtQty.Text = "1";
+                numQty.Text = "1";
             }
         }
 
         private void SelectOrderItem_Load(object sender, EventArgs e)
         {
-            cartDataTable.Columns.Add(new DataColumn("Cart ID"));
-            
+            if(parent.dgvOrderItems.DataSource != null)
+            {
+                dgvCart.DataSource = parent.dgvOrderItems.DataSource;
+            }
+            cartDataTable.Columns.Add(new DataColumn("Cart ID"));            
             cartDataTable.Columns.Add(new DataColumn("Item ID"));
             cartDataTable.Columns.Add(new DataColumn("Item Name"));
             cartDataTable.Columns.Add(new DataColumn("Price"));
@@ -89,7 +93,7 @@ namespace Customer_and_Order_Management
             txtMfg.Text = "";
             txtName.Text = "";
             txtPrice.Text = "";
-            txtQty.Text = "";
+            numQty.Text = "";
             dgvItems.ClearSelection();
             dgvCart.ClearSelection();
         }
@@ -113,7 +117,7 @@ namespace Customer_and_Order_Management
                 row[1] = txtItemId.Text;
                 row[2] = txtName.Text;
                 row[3] = txtPrice.Text;
-                row[4] = txtQty.Text;
+                row[4] = numQty.Text;
                 cartDataTable.Rows.Add(row);
                 dgvCart.AutoResizeColumns();
             }
@@ -140,6 +144,7 @@ namespace Customer_and_Order_Management
         {
             removeFromCart();
         }
+        #endregion
 
         private void removeFromCart()
         {
@@ -147,5 +152,7 @@ namespace Customer_and_Order_Management
             dgvCart.AutoResizeColumns();
             cartSize--;
         }
+
+
     }
 }

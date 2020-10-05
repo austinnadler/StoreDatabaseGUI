@@ -64,16 +64,15 @@ namespace Customer_and_Order_Management
             selectCustomer();
         }
 
-        private void dgvItems_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCustomer_SelectionChanged(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (dgvCustomer.CurrentCell != null)
             {
-                DataGridViewRow row = dgvCustomer.Rows[e.RowIndex];
+                DataGridViewRow row = dgvCustomer.Rows[dgvCustomer.CurrentCell.RowIndex];
                 customerId = (int)row.Cells[0].Value;
                 customerName = (string)row.Cells[1].Value;
             }
         }
-
         private void dgvItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             selectCustomer();
@@ -90,6 +89,8 @@ namespace Customer_and_Order_Management
                 this.Close();
             }
         }
-    #endregion
+        #endregion
+
+
     }
 }

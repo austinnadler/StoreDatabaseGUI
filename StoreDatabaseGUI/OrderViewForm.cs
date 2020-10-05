@@ -24,10 +24,7 @@ namespace StoreDatabaseGUI
             InitializeComponent();
         }
 
-        private void Orders_Load(object sender, EventArgs e)
-        {
-            loadOrders();
-        }
+
 
     #region Utilities
         public void loadOrders()
@@ -95,14 +92,25 @@ namespace StoreDatabaseGUI
             txtCreatedOn.Text = "";
             txtUpdatedOn.Text = "";
         }
-    #endregion
+        #endregion
 
     #region Events
+        private void Orders_Load(object sender, EventArgs e)
+        {
+            loadOrders();
+            btnDeleteOrder.Enabled = false; // property editor not working for some reason so disable this button on load
+        }
+
         private void dgvOrders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex >= 0)
+
+        }
+
+        private void dgvOrders_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvOrders.CurrentCell != null)
             {
-                DataGridViewRow row = dgvOrders.Rows[e.RowIndex];
+                DataGridViewRow row = dgvOrders.Rows[dgvOrders.CurrentCell.RowIndex];
                 txtOrderId.Text = row.Cells[0].Value.ToString();
                 txtCustomerId.Text = row.Cells[1].Value.ToString();
                 txtCustomerName.Text = row.Cells[2].Value.ToString();
@@ -111,6 +119,7 @@ namespace StoreDatabaseGUI
                 txtCreatedOn.Text = row.Cells[5].Value.ToString();
                 txtUpdatedOn.Text = row.Cells[6].Value.ToString();
                 loadOrderItems(Convert.ToInt32(txtOrderId.Text));
+                btnDeleteOrder.Enabled = true;
             }
         }
 
@@ -120,6 +129,7 @@ namespace StoreDatabaseGUI
             dgvOrders.ClearSelection();
             OrderItemDataTable.Clear();
             dgvOrderItems.Refresh();
+            btnDeleteOrder.Enabled = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -185,6 +195,8 @@ namespace StoreDatabaseGUI
             NewOrderForm no = new NewOrderForm(this);
             no.Show();
         }
-    #endregion
+        #endregion
+
+
     }
 }

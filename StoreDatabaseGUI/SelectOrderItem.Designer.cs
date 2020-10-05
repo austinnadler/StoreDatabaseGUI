@@ -37,15 +37,16 @@
             this.lblMfg = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.txtQty = new System.Windows.Forms.TextBox();
             this.lblQty = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.dgvCart = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
+            this.numQty = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQty)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvItems
@@ -63,7 +64,7 @@
             this.dgvItems.Size = new System.Drawing.Size(347, 370);
             this.dgvItems.TabIndex = 60;
             this.dgvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellDoubleClick);
-            this.dgvItems.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvItems_CellMouseClick);
+            this.dgvItems.SelectionChanged += new System.EventHandler(this.dgvItems_SelectionChanged);
             // 
             // lblItemId
             // 
@@ -137,15 +138,6 @@
             this.lblPrice.TabIndex = 67;
             this.lblPrice.Text = "Price";
             // 
-            // txtQty
-            // 
-            this.txtQty.Location = new System.Drawing.Point(435, 65);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(100, 20);
-            this.txtQty.TabIndex = 0;
-            this.txtQty.Text = "1";
-            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // lblQty
             // 
             this.lblQty.AutoSize = true;
@@ -207,21 +199,28 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 75;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Submit";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // numQty
+            // 
+            this.numQty.Location = new System.Drawing.Point(435, 66);
+            this.numQty.Name = "numQty";
+            this.numQty.Size = new System.Drawing.Size(100, 20);
+            this.numQty.TabIndex = 76;
             // 
             // SelectOrderItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 555);
+            this.Controls.Add(this.numQty);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dgvCart);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtQty);
             this.Controls.Add(this.lblQty);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.lblPrice);
@@ -239,6 +238,7 @@
             this.Load += new System.EventHandler(this.SelectOrderItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,12 +255,12 @@
         private System.Windows.Forms.Label lblMfg;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label lblQty;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.DataGridView dgvCart;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.NumericUpDown numQty;
     }
 }

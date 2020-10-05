@@ -85,6 +85,7 @@
             this.txtCustomerId.Size = new System.Drawing.Size(150, 20);
             this.txtCustomerId.TabIndex = 2;
             this.txtCustomerId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCustomerId.TextChanged += new System.EventHandler(this.txtCustomerId_TextChanged);
             // 
             // lblCustomerName
             // 
@@ -129,10 +130,11 @@
             this.dgvOrderItems.Size = new System.Drawing.Size(359, 175);
             this.dgvOrderItems.TabIndex = 0;
             this.dgvOrderItems.TabStop = false;
-            this.dgvOrderItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderItems_CellClick);
+            this.dgvOrderItems.SelectionChanged += new System.EventHandler(this.dgvOrderItems_SelectionChanged);
             // 
             // btnSubmit
             // 
+            this.btnSubmit.Enabled = false;
             this.btnSubmit.Location = new System.Drawing.Point(13, 396);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
@@ -159,6 +161,7 @@
             this.txtTotalPrice.Size = new System.Drawing.Size(100, 20);
             this.txtTotalPrice.TabIndex = 10;
             this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
             // 
             // lblTotalPrice
             // 
@@ -184,7 +187,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Order";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewOrder_Close);
-            this.Load += new System.EventHandler(this.NewOrderForm_Load);
             this.gpCustomer.ResumeLayout(false);
             this.gpCustomer.PerformLayout();
             this.gbOrderItems.ResumeLayout(false);

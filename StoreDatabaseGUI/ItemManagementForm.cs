@@ -28,7 +28,7 @@ namespace Customer_and_Order_Management
             dataTable.Clear();
             try
             {
-                string queryString = "select * from item";
+                string queryString = "select id as 'ID', manufacturer as 'Manufacturer', name as 'Name', price as 'Price' from item";
 
                 SqlConnection connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
                 SqlCommand command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
@@ -49,6 +49,21 @@ namespace Customer_and_Order_Management
             }
         }
 
+        private void enableSaveDelete()
+        {
+            bool enable = txtMfg.Text != "" && txtName.Text != "" && txtPrice.Text != ""; // If all fields are not empty, enable the save and delete buttons
+            if (enable)
+            {
+                btnSave.Enabled = true;
+                btnDelete.Enabled = true;
+            }
+            else
+            {
+                btnSave.Enabled = false;
+                btnDelete.Enabled = false;
+            }
+        }
+
         private void clearFields()
         {
             txtId.Text = "";
@@ -65,11 +80,11 @@ namespace Customer_and_Order_Management
             loadData();
         }
 
-        public void dgvItems_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvItems_SelectionChanged(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (dgvItems.CurrentCell != null)
             {
-                DataGridViewRow row = dgvItems.Rows[e.RowIndex];
+                DataGridViewRow row = dgvItems.Rows[dgvItems.CurrentCell.RowIndex];
                 txtId.Text = row.Cells[0].Value.ToString();
                 txtMfg.Text = row.Cells[1].Value.ToString();
                 txtName.Text = row.Cells[2].Value.ToString();
@@ -203,6 +218,32 @@ namespace Customer_and_Order_Management
                 }
             }
         }
-    #endregion
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+            if (txtId.Text != "")
+            {
+                btnInsert.Enabled = true;
+            }
+            else
+            {
+                btnInsert.Enabled = false;
+            }
+        }
+
+        private void txtMfg_TextChanged(object sender, EventArgs e)
+        {
+            enableSaveDelete();
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            enableSaveDelete();
+        }
+
+        private void txtPrice_TextChanged_1(object sender, EventArgs e)
+        {
+            enableSaveDelete();
+        }
+        #endregion
     }
 }

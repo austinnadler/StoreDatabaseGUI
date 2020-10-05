@@ -39,7 +39,7 @@
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(75, 23);
             this.btnSelect.TabIndex = 1;
-            this.btnSelect.Text = "Select";
+            this.btnSelect.Text = "Submit";
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
@@ -58,8 +58,8 @@
             this.dgvCustomer.Size = new System.Drawing.Size(650, 264);
             this.dgvCustomer.TabIndex = 2;
             this.dgvCustomer.TabStop = false;
-            this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
             this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellDoubleClick);
+            this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
             // 
             // SelectCustomerForOrderForm
             // 
