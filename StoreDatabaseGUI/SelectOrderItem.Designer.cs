@@ -61,7 +61,7 @@
             this.dgvItems.RowHeadersVisible = false;
             this.dgvItems.RowHeadersWidth = 62;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(347, 370);
+            this.dgvItems.Size = new System.Drawing.Size(400, 400);
             this.dgvItems.TabIndex = 60;
             this.dgvItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellDoubleClick);
             this.dgvItems.SelectionChanged += new System.EventHandler(this.dgvItems_SelectionChanged);
@@ -69,7 +69,7 @@
             // lblItemId
             // 
             this.lblItemId.AutoSize = true;
-            this.lblItemId.Location = new System.Drawing.Point(210, 21);
+            this.lblItemId.Location = new System.Drawing.Point(229, 21);
             this.lblItemId.Name = "lblItemId";
             this.lblItemId.Size = new System.Drawing.Size(41, 13);
             this.lblItemId.TabIndex = 61;
@@ -77,7 +77,7 @@
             // 
             // txtItemId
             // 
-            this.txtItemId.Location = new System.Drawing.Point(257, 19);
+            this.txtItemId.Location = new System.Drawing.Point(276, 19);
             this.txtItemId.Name = "txtItemId";
             this.txtItemId.ReadOnly = true;
             this.txtItemId.Size = new System.Drawing.Size(100, 20);
@@ -86,7 +86,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(257, 44);
+            this.txtName.Location = new System.Drawing.Point(276, 44);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(100, 20);
@@ -96,7 +96,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(195, 47);
+            this.lblName.Location = new System.Drawing.Point(214, 47);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(56, 13);
             this.lblName.TabIndex = 63;
@@ -104,7 +104,7 @@
             // 
             // txtMfg
             // 
-            this.txtMfg.Location = new System.Drawing.Point(435, 19);
+            this.txtMfg.Location = new System.Drawing.Point(454, 19);
             this.txtMfg.Name = "txtMfg";
             this.txtMfg.ReadOnly = true;
             this.txtMfg.Size = new System.Drawing.Size(100, 20);
@@ -114,7 +114,7 @@
             // lblMfg
             // 
             this.lblMfg.AutoSize = true;
-            this.lblMfg.Location = new System.Drawing.Point(361, 21);
+            this.lblMfg.Location = new System.Drawing.Point(380, 21);
             this.lblMfg.Name = "lblMfg";
             this.lblMfg.Size = new System.Drawing.Size(70, 13);
             this.lblMfg.TabIndex = 65;
@@ -122,7 +122,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(435, 41);
+            this.txtPrice.Location = new System.Drawing.Point(454, 41);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
@@ -132,7 +132,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(402, 44);
+            this.lblPrice.Location = new System.Drawing.Point(421, 44);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(31, 13);
             this.lblPrice.TabIndex = 67;
@@ -141,7 +141,7 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
-            this.lblQty.Location = new System.Drawing.Point(385, 68);
+            this.lblQty.Location = new System.Drawing.Point(404, 68);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(46, 13);
             this.lblQty.TabIndex = 69;
@@ -149,7 +149,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(361, 257);
+            this.btnAdd.Location = new System.Drawing.Point(415, 268);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(33, 23);
             this.btnAdd.TabIndex = 71;
@@ -169,7 +169,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(361, 287);
+            this.btnRemove.Location = new System.Drawing.Point(415, 297);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(33, 23);
             this.btnRemove.TabIndex = 73;
@@ -182,20 +182,20 @@
             this.dgvCart.AllowUserToAddRows = false;
             this.dgvCart.AllowUserToResizeRows = false;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCart.Location = new System.Drawing.Point(399, 121);
+            this.dgvCart.Location = new System.Drawing.Point(454, 121);
             this.dgvCart.MultiSelect = false;
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
             this.dgvCart.RowHeadersVisible = false;
             this.dgvCart.RowHeadersWidth = 62;
             this.dgvCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCart.Size = new System.Drawing.Size(347, 370);
+            this.dgvCart.Size = new System.Drawing.Size(400, 400);
             this.dgvCart.TabIndex = 74;
             this.dgvCart.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellDoubleClick);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(339, 513);
+            this.btnSave.Location = new System.Drawing.Point(396, 554);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 75;
@@ -205,7 +205,7 @@
             // 
             // numQty
             // 
-            this.numQty.Location = new System.Drawing.Point(435, 66);
+            this.numQty.Location = new System.Drawing.Point(454, 66);
             this.numQty.Name = "numQty";
             this.numQty.Size = new System.Drawing.Size(100, 20);
             this.numQty.TabIndex = 76;
@@ -214,7 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 555);
+            this.ClientSize = new System.Drawing.Size(865, 589);
             this.Controls.Add(this.numQty);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dgvCart);
