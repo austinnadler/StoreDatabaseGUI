@@ -215,12 +215,12 @@ namespace StoreDatabaseGUI
 
         private void txtOrderId_TextChanged(object sender, EventArgs e)
         {
-            btnCustomer.Enabled = (cboOrderStatus.Text == "Received") ? true : false ;
+            btnCustomer.Enabled = (cboOrderStatus.Text == "Received" || cboOrderStatus.Text == "Processing") ? true : false ;
         }
 
         private void cboOrderStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnCustomer.Enabled = (cboOrderStatus.Text == "Received") ? true : false;
+            btnCustomer.Enabled = (cboOrderStatus.Text == "Received" || cboOrderStatus.Text == "Processing") ? true : false;
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)

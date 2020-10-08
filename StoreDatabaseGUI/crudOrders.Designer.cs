@@ -61,9 +61,8 @@
             // 
             // btnDeleteOrder
             // 
-            this.btnDeleteOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteOrder.Enabled = false;
-            this.btnDeleteOrder.Location = new System.Drawing.Point(410, 147);
+            this.btnDeleteOrder.Location = new System.Drawing.Point(407, 164);
             this.btnDeleteOrder.Name = "btnDeleteOrder";
             this.btnDeleteOrder.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteOrder.TabIndex = 53;
@@ -74,7 +73,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(816, 230);
+            this.btnClear.Location = new System.Drawing.Point(816, 247);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 32;
@@ -86,7 +85,7 @@
             // lblOrderId
             // 
             this.lblOrderId.AutoSize = true;
-            this.lblOrderId.Location = new System.Drawing.Point(282, 20);
+            this.lblOrderId.Location = new System.Drawing.Point(279, 37);
             this.lblOrderId.Name = "lblOrderId";
             this.lblOrderId.Size = new System.Drawing.Size(47, 13);
             this.lblOrderId.TabIndex = 52;
@@ -94,7 +93,7 @@
             // 
             // txtOrderId
             // 
-            this.txtOrderId.Location = new System.Drawing.Point(335, 16);
+            this.txtOrderId.Location = new System.Drawing.Point(332, 33);
             this.txtOrderId.Name = "txtOrderId";
             this.txtOrderId.ReadOnly = true;
             this.txtOrderId.Size = new System.Drawing.Size(150, 20);
@@ -106,7 +105,7 @@
             // lblOrderStatus
             // 
             this.lblOrderStatus.AutoSize = true;
-            this.lblOrderStatus.Location = new System.Drawing.Point(263, 45);
+            this.lblOrderStatus.Location = new System.Drawing.Point(260, 62);
             this.lblOrderStatus.Name = "lblOrderStatus";
             this.lblOrderStatus.Size = new System.Drawing.Size(66, 13);
             this.lblOrderStatus.TabIndex = 44;
@@ -114,7 +113,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(329, 147);
+            this.btnSave.Location = new System.Drawing.Point(326, 164);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 42;
@@ -125,7 +124,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(897, 230);
+            this.btnRefresh.Location = new System.Drawing.Point(897, 247);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 34;
@@ -140,13 +139,13 @@
             this.dgvOrders.AllowUserToResizeRows = false;
             this.dgvOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(5, 259);
+            this.dgvOrders.Location = new System.Drawing.Point(5, 278);
             this.dgvOrders.MultiSelect = false;
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.RowHeadersVisible = false;
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrders.Size = new System.Drawing.Size(967, 493);
+            this.dgvOrders.Size = new System.Drawing.Size(967, 474);
             this.dgvOrders.TabIndex = 30;
             this.dgvOrders.TabStop = false;
             this.dgvOrders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOrders_CellMouseClick);
@@ -155,7 +154,7 @@
             // lblCustomerId
             // 
             this.lblCustomerId.AutoSize = true;
-            this.lblCustomerId.Location = new System.Drawing.Point(24, 44);
+            this.lblCustomerId.Location = new System.Drawing.Point(25, 35);
             this.lblCustomerId.Name = "lblCustomerId";
             this.lblCustomerId.Size = new System.Drawing.Size(65, 13);
             this.lblCustomerId.TabIndex = 55;
@@ -163,7 +162,7 @@
             // 
             // txtCustomerId
             // 
-            this.txtCustomerId.Location = new System.Drawing.Point(95, 42);
+            this.txtCustomerId.Location = new System.Drawing.Point(96, 33);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.ReadOnly = true;
             this.txtCustomerId.Size = new System.Drawing.Size(150, 20);
@@ -174,7 +173,7 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(272, 72);
+            this.lblTotalPrice.Location = new System.Drawing.Point(269, 89);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(57, 13);
             this.lblTotalPrice.TabIndex = 57;
@@ -182,7 +181,7 @@
             // 
             // txtTotalPrice
             // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(335, 69);
+            this.txtTotalPrice.Location = new System.Drawing.Point(332, 86);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(150, 20);
@@ -197,7 +196,7 @@
             "Processing",
             "Shipped",
             "Delivered"});
-            this.cboOrderStatus.Location = new System.Drawing.Point(335, 42);
+            this.cboOrderStatus.Location = new System.Drawing.Point(332, 59);
             this.cboOrderStatus.Name = "cboOrderStatus";
             this.cboOrderStatus.Size = new System.Drawing.Size(150, 21);
             this.cboOrderStatus.TabIndex = 58;
@@ -216,7 +215,7 @@
             this.dgvOrderItems.ReadOnly = true;
             this.dgvOrderItems.RowHeadersVisible = false;
             this.dgvOrderItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrderItems.Size = new System.Drawing.Size(463, 173);
+            this.dgvOrderItems.Size = new System.Drawing.Size(463, 190);
             this.dgvOrderItems.TabIndex = 59;
             // 
             // lblOrderItems
@@ -232,7 +231,7 @@
             // lblCreatedOn
             // 
             this.lblCreatedOn.AutoSize = true;
-            this.lblCreatedOn.Location = new System.Drawing.Point(267, 98);
+            this.lblCreatedOn.Location = new System.Drawing.Point(264, 115);
             this.lblCreatedOn.Name = "lblCreatedOn";
             this.lblCreatedOn.Size = new System.Drawing.Size(59, 13);
             this.lblCreatedOn.TabIndex = 63;
@@ -241,7 +240,7 @@
             // lblUpdatedOn
             // 
             this.lblUpdatedOn.AutoSize = true;
-            this.lblUpdatedOn.Location = new System.Drawing.Point(263, 124);
+            this.lblUpdatedOn.Location = new System.Drawing.Point(260, 141);
             this.lblUpdatedOn.Name = "lblUpdatedOn";
             this.lblUpdatedOn.Size = new System.Drawing.Size(63, 13);
             this.lblUpdatedOn.TabIndex = 64;
@@ -249,7 +248,7 @@
             // 
             // txtCreatedOn
             // 
-            this.txtCreatedOn.Location = new System.Drawing.Point(335, 95);
+            this.txtCreatedOn.Location = new System.Drawing.Point(332, 112);
             this.txtCreatedOn.Name = "txtCreatedOn";
             this.txtCreatedOn.ReadOnly = true;
             this.txtCreatedOn.Size = new System.Drawing.Size(150, 20);
@@ -257,7 +256,7 @@
             // 
             // txtUpdatedOn
             // 
-            this.txtUpdatedOn.Location = new System.Drawing.Point(335, 121);
+            this.txtUpdatedOn.Location = new System.Drawing.Point(332, 138);
             this.txtUpdatedOn.Name = "txtUpdatedOn";
             this.txtUpdatedOn.ReadOnly = true;
             this.txtUpdatedOn.Size = new System.Drawing.Size(150, 20);
@@ -265,7 +264,7 @@
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(95, 68);
+            this.txtCustomerName.Location = new System.Drawing.Point(96, 59);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.ReadOnly = true;
             this.txtCustomerName.Size = new System.Drawing.Size(150, 20);
@@ -286,7 +285,7 @@
             // grpSearch
             // 
             this.grpSearch.Controls.Add(this.txtSearchString);
-            this.grpSearch.Location = new System.Drawing.Point(5, 204);
+            this.grpSearch.Location = new System.Drawing.Point(5, 221);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Size = new System.Drawing.Size(342, 49);
             this.grpSearch.TabIndex = 70;
@@ -303,7 +302,7 @@
             // 
             // btnCustomer
             // 
-            this.btnCustomer.Location = new System.Drawing.Point(19, 65);
+            this.btnCustomer.Location = new System.Drawing.Point(20, 56);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(70, 23);
             this.btnCustomer.TabIndex = 71;
@@ -331,7 +330,7 @@
             this.grpOrder.Controls.Add(this.cboOrderStatus);
             this.grpOrder.Location = new System.Drawing.Point(5, 9);
             this.grpOrder.Name = "grpOrder";
-            this.grpOrder.Size = new System.Drawing.Size(495, 189);
+            this.grpOrder.Size = new System.Drawing.Size(498, 206);
             this.grpOrder.TabIndex = 72;
             this.grpOrder.TabStop = false;
             this.grpOrder.Text = "Create, Update, or Delete";

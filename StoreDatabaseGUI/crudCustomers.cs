@@ -226,29 +226,39 @@ namespace StoreDatabaseGUI
                     setParameters(tcommand, true);
                     int numOrders = (Int32)tcommand.ExecuteScalar();
                     tconnection.Close();
-                  
-                    DialogResult delete = MessageBox.Show($"Are you sure you want to delete {txtLast.Text},  {txtFirst.Text}?\n\nNumber of existing orders: {numOrders}", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (delete == DialogResult.Yes)
+
+                    if(numOrders > 0)
                     {
-                        string queryString = "delete from customer where id=@Id";
-
-                        SqlConnection connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
-                        SqlCommand command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
-                        connection.Open();
-                        setParameters(command, true);
-                        command.ExecuteNonQuery();
-
-                        queryString = "delete from [order] where customer$id=@Id";
-                        connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
-                        command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
-                        connection.Open();
-                        setParameters(command, true);
-                        command.ExecuteNonQuery();
-
-                        connection.Close();
-                        loadCustomerData();
-                        clearFields();
+                        MessageBox.Show("This customer cannot be deleted because they have orders. Go to the order form and delete this customer's orders before deleting them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    else
+                    {
+                        /*DialogResult delete = MessageBox.Show($"Are you sure you want to delete {txtLast.Text},  {txtFirst.Text}?\n\nNumber of existing orders {numOrders}", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);*/
+                        DialogResult delete = MessageBox.Show($"Are you sure you want to delete {txtLast.Text},  {txtFirst.Text}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (delete == DialogResult.Yes)
+                        {
+                            string queryString = "delete from customer where id=@Id";
+
+                            SqlConnection connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
+                            SqlCommand command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
+                            connection.Open();
+                            setParameters(command, true);
+                            command.ExecuteNonQuery();
+
+                            queryString = "delete from [order] where customer$id=@Id";
+                            connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
+                            command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
+                            connection.Open();
+                            setParameters(command, true);
+                            command.ExecuteNonQuery();
+
+                            connection.Close();
+                            loadCustomerData();
+                            clearFields();
+                        }
+                    }
+                  
+                    
                 } 
                 catch (Exception ex)
                 {
