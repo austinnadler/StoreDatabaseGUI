@@ -32,7 +32,7 @@ namespace StoreDatabaseGUI
 
         private void btnManageItems_Click(object sender, EventArgs e)
         {
-            ItemManagementForm imf = new ItemManagementForm();
+            crudItems imf = new crudItems();
             imf.Show();
         }
 

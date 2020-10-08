@@ -32,12 +32,19 @@ namespace StoreDatabaseGUI
             OrderDataTable.Clear();
             try
             {
-                string queryString = "select o.id as 'Order ID', o.customer$id as 'Customer ID', CONCAT(c.lastName, ', ', c.firstName) as 'Customer', o.status as 'Status', o.totalPrice as 'Total price', o.created as 'Created on', o.updated as 'Updated on'  from [order] as o, customer as c where o.customer$id=c.id";
+                string queryString = "select o.id as 'Order ID', o.customer$id as 'Customer ID', CONCAT(c.lastName, ', ', c.firstName) as 'Customer', o.status as 'Status', o.totalPrice as 'Total price', o.created as 'Created on', o.updated as 'Updated on' from [order] as o, customer as c where o.customer$id=c.id";
                 SqlConnection connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
                 SqlCommand command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
+
+                if (txtSearchString.Text != "")
+                {
+                    queryString += $" and concat(o.id, o.customer$id, c.lastName, ', ', c.firstName, o.status, o.totalPrice, o.created, o.updated) like @Search";
+                    command = new SqlCommand(queryString, connection); // reassign with new queryString
+                    command.Parameters.AddWithValue("@Search", $"%{txtSearchString.Text}%");
+                }
+
                 connection.Open();
                 SqlDataAdapter da = new SqlDataAdapter(command); // Create a SqlDataAdapter and run the command, putting the result set in da
-
                 da.Fill(OrderDataTable);
                 connection.Close();
                 da.Dispose();
@@ -46,7 +53,6 @@ namespace StoreDatabaseGUI
                 // Format the dgv
                 dgvOrders.AutoResizeColumns();
                 dgvOrders.ClearSelection();
-                clearFields();
             }
             catch (Exception ex)
             {
@@ -54,7 +60,7 @@ namespace StoreDatabaseGUI
             }
         }
 
-        private void loadOrderItems(int orderId) // Load order_item data for selected order into the top-right dgv
+        private void loadOrderItems() // Load order_item data for selected order into the top-right dgv
         {
 
             OrderItemDataTable.Clear();
@@ -91,6 +97,7 @@ namespace StoreDatabaseGUI
             txtTotalPrice.Text = "";
             txtCreatedOn.Text = "";
             txtUpdatedOn.Text = "";
+            txtSearchString.Text = "";
         }
         #endregion
 
@@ -118,7 +125,7 @@ namespace StoreDatabaseGUI
                 txtTotalPrice.Text = row.Cells[4].Value.ToString();
                 txtCreatedOn.Text = row.Cells[5].Value.ToString();
                 txtUpdatedOn.Text = row.Cells[6].Value.ToString();
-                loadOrderItems(Convert.ToInt32(txtOrderId.Text));
+                loadOrderItems();
                 btnDeleteOrder.Enabled = true;
             }
         }
@@ -138,9 +145,10 @@ namespace StoreDatabaseGUI
             {
                 try
                 {
-                    string queryString = "update [order] set status=@Status, updated=@UpdatedOn where id=@OrderId";
+                    string queryString = "update [order] set customer$id=@CustomerId, status=@Status, updated=@UpdatedOn where id=@OrderId";
                     SqlConnection connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
                     SqlCommand command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
+                    command.Parameters.AddWithValue("@CustomerId", txtCustomerId.Text);
                     command.Parameters.AddWithValue("@OrderId", Convert.ToInt32(txtOrderId.Text));
                     command.Parameters.AddWithValue("@Status", cboOrderStatus.Text);
                     command.Parameters.AddWithValue("@UpdatedOn", DateTime.Now.ToString());
@@ -148,6 +156,8 @@ namespace StoreDatabaseGUI
                     command.ExecuteNonQuery();
                     connection.Close();
                     loadOrders();
+                    dgvOrders.ClearSelection();
+                    clearFields();
                 }
                 catch (Exception ex)
                 {
@@ -192,11 +202,31 @@ namespace StoreDatabaseGUI
 
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
-            NewOrderForm no = new NewOrderForm(this);
+            createOrder no = new createOrder(this);
             no.Show();
         }
+
         #endregion
 
+        private void txtSearchString_TextChanged(object sender, EventArgs e)
+        {
+            loadOrders();
+        }
 
+        private void txtOrderId_TextChanged(object sender, EventArgs e)
+        {
+            btnCustomer.Enabled = (cboOrderStatus.Text == "Received") ? true : false ;
+        }
+
+        private void cboOrderStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnCustomer.Enabled = (cboOrderStatus.Text == "Received") ? true : false;
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            SelectOrderCustomer child = new SelectOrderCustomer(this);
+            child.Show();
+        }
     }
 }

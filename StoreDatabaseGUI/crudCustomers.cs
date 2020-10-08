@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
+using Customer_and_Order_Management;
 
 namespace StoreDatabaseGUI
 {
@@ -16,6 +17,7 @@ namespace StoreDatabaseGUI
     {
         DataTable dataTable = new DataTable(); // Create a DataTable to store the data selected. Outside so it can be cleared at the beginning of selection. Also allows for filtering without hitting the database again.
         private const string connectionString = "Server=localhost;Database=Store;Integrated Security=True";
+        private SelectOrderCustomer parent = null;
 
         public CustomerViewForm()
         {
@@ -23,7 +25,14 @@ namespace StoreDatabaseGUI
             loadCustomerData();
         }
 
-    #region Utilities
+        public CustomerViewForm(SelectOrderCustomer parent)
+        {
+            InitializeComponent();
+            loadCustomerData();
+            this.parent = parent;
+        }
+
+        #region Utilities
         private void loadCustomerData()
         {
             try
@@ -34,17 +43,22 @@ namespace StoreDatabaseGUI
 
                 SqlConnection connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
                 SqlCommand command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
+
+                if (txtSearchString.Text != "")
+                {
+                    queryString += $" where concat(id, firstName, lastName, phoneNumber, emailAddress, streetAddress, city, state, zip, created, updated) like @Search";
+                    command = new SqlCommand(queryString, connection); // reassign with new queryString
+                    command.Parameters.AddWithValue("@Search", $"%{txtSearchString.Text}%");
+                }
+
                 connection.Open();
                 SqlDataAdapter da = new SqlDataAdapter(command); // Create a SqlDataAdapter and run the command, putting the result set in da
                 da.Fill(dataTable);
                 connection.Close();
                 da.Dispose();
-                dgvCustomers.DataSource = dataTable; // Put the DataTable into the DataGridView
-
-                // Format the dgv
-                dgvCustomers.AutoResizeColumns();
+                dgvCustomers.DataSource = dataTable; // Put the DataTable into the DataGridView    
+                dgvCustomers.AutoResizeColumns(); // Format the dgv
                 dgvCustomers.ClearSelection();
-                clearFields();
             }
             catch(Exception ex)
             {
@@ -56,7 +70,7 @@ namespace StoreDatabaseGUI
         private void clearFields()
         {
             dgvCustomers.ClearSelection();
-            txtId.Text = txtFirst.Text = txtLast.Text = txtPhone.Text = txtEmail.Text = txtStreetAddress.Text = txtCity.Text = txtZip.Text = "";
+            txtId.Text = txtFirst.Text = txtLast.Text = txtPhone.Text = txtEmail.Text = txtStreetAddress.Text = txtCity.Text = txtZip.Text = txtSearchString.Text = "";
             cboState.Text = null;
             btnSave.Enabled = btnInsert.Enabled = btnDelete.Enabled = false;
         }
@@ -91,9 +105,10 @@ namespace StoreDatabaseGUI
         private void Home_Load(object sender, EventArgs e)
         {
             loadCustomerData();
+            clearFields();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             loadCustomerData();
         }
@@ -258,6 +273,7 @@ namespace StoreDatabaseGUI
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearFields();
+            loadCustomerData();
         }
 
         #endregion
@@ -282,6 +298,19 @@ namespace StoreDatabaseGUI
             {
                 btnSave.Enabled = btnInsert.Enabled = false;
             }
+        }
+
+        private void CustomerViewForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(parent != null)
+            {
+                parent.Activate();
+            }
+        }
+
+        private void txtSearchString_TextChanged(object sender, EventArgs e)
+        {
+            loadCustomerData();
         }
     }
 }

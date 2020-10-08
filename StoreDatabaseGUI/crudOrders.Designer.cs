@@ -47,29 +47,34 @@
             this.lblUpdatedOn = new System.Windows.Forms.Label();
             this.txtCreatedOn = new System.Windows.Forms.TextBox();
             this.txtUpdatedOn = new System.Windows.Forms.TextBox();
-            this.lblCustomerName = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.btnNewOrder = new System.Windows.Forms.Button();
+            this.grpSearch = new System.Windows.Forms.GroupBox();
+            this.txtSearchString = new System.Windows.Forms.TextBox();
+            this.btnCustomer = new System.Windows.Forms.Button();
+            this.grpOrder = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
+            this.grpSearch.SuspendLayout();
+            this.grpOrder.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDeleteOrder
             // 
             this.btnDeleteOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteOrder.Enabled = false;
-            this.btnDeleteOrder.Location = new System.Drawing.Point(893, 204);
+            this.btnDeleteOrder.Location = new System.Drawing.Point(410, 147);
             this.btnDeleteOrder.Name = "btnDeleteOrder";
             this.btnDeleteOrder.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteOrder.TabIndex = 53;
             this.btnDeleteOrder.TabStop = false;
-            this.btnDeleteOrder.Text = "Delete order";
+            this.btnDeleteOrder.Text = "Delete";
             this.btnDeleteOrder.UseVisualStyleBackColor = true;
             this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(8, 204);
+            this.btnClear.Location = new System.Drawing.Point(816, 230);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 32;
@@ -81,7 +86,7 @@
             // lblOrderId
             // 
             this.lblOrderId.AutoSize = true;
-            this.lblOrderId.Location = new System.Drawing.Point(48, 19);
+            this.lblOrderId.Location = new System.Drawing.Point(282, 20);
             this.lblOrderId.Name = "lblOrderId";
             this.lblOrderId.Size = new System.Drawing.Size(47, 13);
             this.lblOrderId.TabIndex = 52;
@@ -89,18 +94,19 @@
             // 
             // txtOrderId
             // 
-            this.txtOrderId.Location = new System.Drawing.Point(101, 15);
+            this.txtOrderId.Location = new System.Drawing.Point(335, 16);
             this.txtOrderId.Name = "txtOrderId";
             this.txtOrderId.ReadOnly = true;
             this.txtOrderId.Size = new System.Drawing.Size(150, 20);
             this.txtOrderId.TabIndex = 33;
             this.txtOrderId.TabStop = false;
             this.txtOrderId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOrderId.TextChanged += new System.EventHandler(this.txtOrderId_TextChanged);
             // 
             // lblOrderStatus
             // 
             this.lblOrderStatus.AutoSize = true;
-            this.lblOrderStatus.Location = new System.Drawing.Point(271, 17);
+            this.lblOrderStatus.Location = new System.Drawing.Point(263, 45);
             this.lblOrderStatus.Name = "lblOrderStatus";
             this.lblOrderStatus.Size = new System.Drawing.Size(66, 13);
             this.lblOrderStatus.TabIndex = 44;
@@ -108,18 +114,18 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(384, 119);
+            this.btnSave.Location = new System.Drawing.Point(329, 147);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 42;
             this.btnSave.TabStop = false;
-            this.btnSave.Text = "Submit";
+            this.btnSave.Text = "Update";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(89, 204);
+            this.btnRefresh.Location = new System.Drawing.Point(897, 230);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 34;
@@ -132,17 +138,15 @@
             // 
             this.dgvOrders.AllowUserToAddRows = false;
             this.dgvOrders.AllowUserToResizeRows = false;
-            this.dgvOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvOrders.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(8, 233);
+            this.dgvOrders.Location = new System.Drawing.Point(5, 259);
             this.dgvOrders.MultiSelect = false;
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.ReadOnly = true;
             this.dgvOrders.RowHeadersVisible = false;
             this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrders.Size = new System.Drawing.Size(964, 493);
+            this.dgvOrders.Size = new System.Drawing.Size(967, 493);
             this.dgvOrders.TabIndex = 30;
             this.dgvOrders.TabStop = false;
             this.dgvOrders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOrders_CellMouseClick);
@@ -151,7 +155,7 @@
             // lblCustomerId
             // 
             this.lblCustomerId.AutoSize = true;
-            this.lblCustomerId.Location = new System.Drawing.Point(29, 44);
+            this.lblCustomerId.Location = new System.Drawing.Point(24, 44);
             this.lblCustomerId.Name = "lblCustomerId";
             this.lblCustomerId.Size = new System.Drawing.Size(65, 13);
             this.lblCustomerId.TabIndex = 55;
@@ -159,7 +163,7 @@
             // 
             // txtCustomerId
             // 
-            this.txtCustomerId.Location = new System.Drawing.Point(101, 41);
+            this.txtCustomerId.Location = new System.Drawing.Point(95, 42);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.ReadOnly = true;
             this.txtCustomerId.Size = new System.Drawing.Size(150, 20);
@@ -170,7 +174,7 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(280, 44);
+            this.lblTotalPrice.Location = new System.Drawing.Point(272, 72);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(57, 13);
             this.lblTotalPrice.TabIndex = 57;
@@ -178,7 +182,7 @@
             // 
             // txtTotalPrice
             // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(343, 41);
+            this.txtTotalPrice.Location = new System.Drawing.Point(335, 69);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(150, 20);
@@ -193,10 +197,11 @@
             "Processing",
             "Shipped",
             "Delivered"});
-            this.cboOrderStatus.Location = new System.Drawing.Point(343, 14);
+            this.cboOrderStatus.Location = new System.Drawing.Point(335, 42);
             this.cboOrderStatus.Name = "cboOrderStatus";
             this.cboOrderStatus.Size = new System.Drawing.Size(150, 21);
             this.cboOrderStatus.TabIndex = 58;
+            this.cboOrderStatus.SelectedIndexChanged += new System.EventHandler(this.cboOrderStatus_SelectedIndexChanged);
             // 
             // dgvOrderItems
             // 
@@ -211,7 +216,7 @@
             this.dgvOrderItems.ReadOnly = true;
             this.dgvOrderItems.RowHeadersVisible = false;
             this.dgvOrderItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrderItems.Size = new System.Drawing.Size(459, 173);
+            this.dgvOrderItems.Size = new System.Drawing.Size(463, 173);
             this.dgvOrderItems.TabIndex = 59;
             // 
             // lblOrderItems
@@ -227,7 +232,7 @@
             // lblCreatedOn
             // 
             this.lblCreatedOn.AutoSize = true;
-            this.lblCreatedOn.Location = new System.Drawing.Point(275, 70);
+            this.lblCreatedOn.Location = new System.Drawing.Point(267, 98);
             this.lblCreatedOn.Name = "lblCreatedOn";
             this.lblCreatedOn.Size = new System.Drawing.Size(59, 13);
             this.lblCreatedOn.TabIndex = 63;
@@ -236,7 +241,7 @@
             // lblUpdatedOn
             // 
             this.lblUpdatedOn.AutoSize = true;
-            this.lblUpdatedOn.Location = new System.Drawing.Point(271, 96);
+            this.lblUpdatedOn.Location = new System.Drawing.Point(263, 124);
             this.lblUpdatedOn.Name = "lblUpdatedOn";
             this.lblUpdatedOn.Size = new System.Drawing.Size(63, 13);
             this.lblUpdatedOn.TabIndex = 64;
@@ -244,7 +249,7 @@
             // 
             // txtCreatedOn
             // 
-            this.txtCreatedOn.Location = new System.Drawing.Point(343, 67);
+            this.txtCreatedOn.Location = new System.Drawing.Point(335, 95);
             this.txtCreatedOn.Name = "txtCreatedOn";
             this.txtCreatedOn.ReadOnly = true;
             this.txtCreatedOn.Size = new System.Drawing.Size(150, 20);
@@ -252,24 +257,15 @@
             // 
             // txtUpdatedOn
             // 
-            this.txtUpdatedOn.Location = new System.Drawing.Point(343, 93);
+            this.txtUpdatedOn.Location = new System.Drawing.Point(335, 121);
             this.txtUpdatedOn.Name = "txtUpdatedOn";
             this.txtUpdatedOn.ReadOnly = true;
             this.txtUpdatedOn.Size = new System.Drawing.Size(150, 20);
             this.txtUpdatedOn.TabIndex = 66;
             // 
-            // lblCustomerName
-            // 
-            this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.Location = new System.Drawing.Point(13, 72);
-            this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(82, 13);
-            this.lblCustomerName.TabIndex = 67;
-            this.lblCustomerName.Text = "Customer Name";
-            // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(101, 67);
+            this.txtCustomerName.Location = new System.Drawing.Point(95, 68);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.ReadOnly = true;
             this.txtCustomerName.Size = new System.Drawing.Size(150, 20);
@@ -279,7 +275,7 @@
             // 
             // btnNewOrder
             // 
-            this.btnNewOrder.Location = new System.Drawing.Point(451, 732);
+            this.btnNewOrder.Location = new System.Drawing.Point(455, 758);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(75, 23);
             this.btnNewOrder.TabIndex = 69;
@@ -287,41 +283,84 @@
             this.btnNewOrder.UseVisualStyleBackColor = true;
             this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
             // 
+            // grpSearch
+            // 
+            this.grpSearch.Controls.Add(this.txtSearchString);
+            this.grpSearch.Location = new System.Drawing.Point(5, 204);
+            this.grpSearch.Name = "grpSearch";
+            this.grpSearch.Size = new System.Drawing.Size(342, 49);
+            this.grpSearch.TabIndex = 70;
+            this.grpSearch.TabStop = false;
+            this.grpSearch.Text = "Search";
+            // 
+            // txtSearchString
+            // 
+            this.txtSearchString.Location = new System.Drawing.Point(6, 17);
+            this.txtSearchString.Name = "txtSearchString";
+            this.txtSearchString.Size = new System.Drawing.Size(327, 20);
+            this.txtSearchString.TabIndex = 30;
+            this.txtSearchString.TextChanged += new System.EventHandler(this.txtSearchString_TextChanged);
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.Location = new System.Drawing.Point(19, 65);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(70, 23);
+            this.btnCustomer.TabIndex = 71;
+            this.btnCustomer.Text = "Customer...";
+            this.btnCustomer.UseVisualStyleBackColor = true;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
+            // grpOrder
+            // 
+            this.grpOrder.Controls.Add(this.lblCustomerId);
+            this.grpOrder.Controls.Add(this.btnCustomer);
+            this.grpOrder.Controls.Add(this.btnSave);
+            this.grpOrder.Controls.Add(this.lblOrderStatus);
+            this.grpOrder.Controls.Add(this.btnDeleteOrder);
+            this.grpOrder.Controls.Add(this.txtCustomerName);
+            this.grpOrder.Controls.Add(this.txtOrderId);
+            this.grpOrder.Controls.Add(this.txtUpdatedOn);
+            this.grpOrder.Controls.Add(this.lblOrderId);
+            this.grpOrder.Controls.Add(this.txtCreatedOn);
+            this.grpOrder.Controls.Add(this.lblUpdatedOn);
+            this.grpOrder.Controls.Add(this.txtCustomerId);
+            this.grpOrder.Controls.Add(this.lblCreatedOn);
+            this.grpOrder.Controls.Add(this.txtTotalPrice);
+            this.grpOrder.Controls.Add(this.lblTotalPrice);
+            this.grpOrder.Controls.Add(this.cboOrderStatus);
+            this.grpOrder.Location = new System.Drawing.Point(5, 9);
+            this.grpOrder.Name = "grpOrder";
+            this.grpOrder.Size = new System.Drawing.Size(495, 189);
+            this.grpOrder.TabIndex = 72;
+            this.grpOrder.TabStop = false;
+            this.grpOrder.Text = "Create, Update, or Delete";
+            // 
             // OrderViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 761);
+            this.ClientSize = new System.Drawing.Size(984, 791);
+            this.Controls.Add(this.grpOrder);
+            this.Controls.Add(this.grpSearch);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnNewOrder);
-            this.Controls.Add(this.txtCustomerName);
-            this.Controls.Add(this.lblCustomerName);
-            this.Controls.Add(this.txtUpdatedOn);
-            this.Controls.Add(this.txtCreatedOn);
-            this.Controls.Add(this.lblUpdatedOn);
-            this.Controls.Add(this.lblCreatedOn);
             this.Controls.Add(this.lblOrderItems);
             this.Controls.Add(this.dgvOrderItems);
-            this.Controls.Add(this.cboOrderStatus);
-            this.Controls.Add(this.lblTotalPrice);
-            this.Controls.Add(this.txtTotalPrice);
-            this.Controls.Add(this.lblCustomerId);
-            this.Controls.Add(this.txtCustomerId);
-            this.Controls.Add(this.btnDeleteOrder);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.lblOrderId);
-            this.Controls.Add(this.txtOrderId);
-            this.Controls.Add(this.lblOrderStatus);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvOrders);
-            this.MaximumSize = new System.Drawing.Size(1000, 800);
-            this.MinimumSize = new System.Drawing.Size(1000, 800);
+            this.Controls.Add(this.btnClear);
+            this.MaximumSize = new System.Drawing.Size(1000, 830);
+            this.MinimumSize = new System.Drawing.Size(1000, 830);
             this.Name = "OrderViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orders";
             this.Load += new System.EventHandler(this.Orders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).EndInit();
+            this.grpSearch.ResumeLayout(false);
+            this.grpSearch.PerformLayout();
+            this.grpOrder.ResumeLayout(false);
+            this.grpOrder.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,7 +377,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Label lblCustomerId;
-        private System.Windows.Forms.TextBox txtCustomerId;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.ComboBox cboOrderStatus;
@@ -348,8 +386,12 @@
         private System.Windows.Forms.Label lblUpdatedOn;
         private System.Windows.Forms.TextBox txtCreatedOn;
         private System.Windows.Forms.TextBox txtUpdatedOn;
-        private System.Windows.Forms.Label lblCustomerName;
-        private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Button btnNewOrder;
+        private System.Windows.Forms.GroupBox grpSearch;
+        private System.Windows.Forms.TextBox txtSearchString;
+        private System.Windows.Forms.Button btnCustomer;
+        public System.Windows.Forms.TextBox txtCustomerId;
+        public System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.GroupBox grpOrder;
     }
 }

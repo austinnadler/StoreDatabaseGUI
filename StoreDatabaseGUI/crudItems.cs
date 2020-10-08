@@ -12,13 +12,13 @@ using System.Text.RegularExpressions;
 
 namespace Customer_and_Order_Management
 {
-    public partial class ItemManagementForm : Form
+    public partial class crudItems : Form
     {
 
         private DataTable dataTable = new DataTable();
         private const string connectionString = "Server=localhost;Database=Store;Integrated Security=True";
 
-        public ItemManagementForm()
+        public crudItems()
         {
             InitializeComponent();
         }
@@ -32,8 +32,16 @@ namespace Customer_and_Order_Management
 
                 SqlConnection connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
                 SqlCommand command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
-                connection.Open();
+
+                if (txtSearchString.Text != "")
+                {
+                    queryString += $" where concat(id, manufacturer, name, price) like @Search";
+                    command = new SqlCommand(queryString, connection); // reassign with new queryString
+                    command.Parameters.AddWithValue("@Search", $"%{txtSearchString.Text}%");
+                }
+
                 SqlDataAdapter da = new SqlDataAdapter(command); // Create a SqlDataAdapter and run the command, putting the result set in da
+                connection.Open();
                 da.Fill(dataTable);
                 connection.Close();
                 da.Dispose();
@@ -70,6 +78,7 @@ namespace Customer_and_Order_Management
             txtMfg.Text = "";
             txtName.Text = "";
             txtPrice.Text = "";
+            txtSearchString.Text = "";
             dgvItems.ClearSelection();
         }
         #endregion
@@ -245,5 +254,10 @@ namespace Customer_and_Order_Management
             enableSaveDelete();
         }
         #endregion
+
+        private void txtSearchString_TextChanged(object sender, EventArgs e)
+        {
+            loadData();
+        }
     }
 }

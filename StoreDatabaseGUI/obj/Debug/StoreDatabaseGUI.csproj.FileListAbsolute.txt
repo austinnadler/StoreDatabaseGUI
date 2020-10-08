@@ -20,12 +20,8 @@ C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\bin\Debug\Cus
 C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.csprojAssemblyReference.cache
 C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.CustomerViewForm.resources
 C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.Home.resources
-C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.ItemManagementForm.resources
-C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.NewOrderForm.resources
 C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.OrderViewForm.resources
 C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.Properties.Resources.resources
-C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.SelectCustomerForOrderForm.resources
-C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.SelectOrderItem.resources
 C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.csproj.GenerateResource.cache
 C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\StoreDatabaseGUI.csproj.CoreCompileInputs.cache
 C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer and Order Management.exe
@@ -62,3 +58,7 @@ C:\Users\Austin\Desktop\StoreDatabaseGUI-dev\StoreDatabaseGUI-dev\StoreDatabaseG
 C:\Users\Austin\Desktop\StoreDatabaseGUI-dev\StoreDatabaseGUI-dev\StoreDatabaseGUI\bin\Debug\Customer and Order Management.exe.config
 C:\Users\Austin\Desktop\StoreDatabaseGUI-dev\StoreDatabaseGUI-dev\StoreDatabaseGUI\bin\Debug\Customer and Order Management.exe
 C:\Users\Austin\Desktop\StoreDatabaseGUI-dev\StoreDatabaseGUI-dev\StoreDatabaseGUI\bin\Debug\Customer and Order Management.pdb
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.crudItems.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.createOrder.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.SelectOrderCustomer.resources
+C:\Users\Austin\Documents\GitHub\StoreDatabaseGUI\StoreDatabaseGUI\obj\Debug\Customer_and_Order_Management.SelectOrderItems.resources
