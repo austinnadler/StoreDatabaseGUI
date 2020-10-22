@@ -22,13 +22,11 @@ namespace StoreDatabaseGUI
         public CustomerViewForm()
         {
             InitializeComponent();
-            loadCustomerData();
         }
 
         public CustomerViewForm(SelectOrderCustomer parent)
         {
             InitializeComponent();
-            loadCustomerData();
             this.parent = parent;
         }
 
@@ -39,7 +37,7 @@ namespace StoreDatabaseGUI
             {
                 dataTable.Clear();
 
-                string queryString = "select id, firstName as 'First name', lastName as 'Last name', phoneNumber as 'Phone number', emailAddress as 'Email address', streetAddress as 'Street address', city as 'City', state as 'State', zip as 'ZIP', created as 'Created on', updated as 'Updated on' from customer";
+                string queryString = "select id as 'ID', firstName as 'First name', lastName as 'Last name', phoneNumber as 'Phone number', emailAddress as 'Email address', streetAddress as 'Street address', city as 'City', state as 'State', zip as 'ZIP', created as 'Created on', updated as 'Updated on' from customer";
 
                 SqlConnection connection = new SqlConnection(connectionString); // Set up the database connection with the connection string
                 SqlCommand command = new SqlCommand(queryString, connection);   // Create a SQL command with the query to be ran, and the database connection
@@ -69,7 +67,6 @@ namespace StoreDatabaseGUI
 
         private void clearFields()
         {
-            dgvCustomers.ClearSelection();
             txtId.Text = txtFirst.Text = txtLast.Text = txtPhone.Text = txtEmail.Text = txtStreetAddress.Text = txtCity.Text = txtZip.Text = txtSearchString.Text = "";
             cboState.Text = null;
             btnSave.Enabled = btnInsert.Enabled = btnDelete.Enabled = false;
@@ -105,7 +102,9 @@ namespace StoreDatabaseGUI
         private void Home_Load(object sender, EventArgs e)
         {
             loadCustomerData();
-            clearFields();
+            txtId.Text = txtFirst.Text = txtLast.Text = txtPhone.Text = txtEmail.Text = txtStreetAddress.Text = txtCity.Text = txtZip.Text = txtSearchString.Text = "";
+            cboState.Text = null;
+            btnSave.Enabled = btnInsert.Enabled = btnDelete.Enabled = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -282,8 +281,8 @@ namespace StoreDatabaseGUI
         
         private void btnClear_Click(object sender, EventArgs e)
         {
-            clearFields();
             loadCustomerData();
+            clearFields();
         }
 
         #endregion

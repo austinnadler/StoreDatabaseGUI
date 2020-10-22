@@ -148,7 +148,6 @@
             this.dgvOrders.Size = new System.Drawing.Size(967, 474);
             this.dgvOrders.TabIndex = 30;
             this.dgvOrders.TabStop = false;
-            this.dgvOrders.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOrders_CellMouseClick);
             this.dgvOrders.SelectionChanged += new System.EventHandler(this.dgvOrders_SelectionChanged);
             // 
             // lblCustomerId

@@ -68,13 +68,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomers.Location = new System.Drawing.Point(12, 269);
+            this.dgvCustomers.Location = new System.Drawing.Point(5, 269);
             this.dgvCustomers.MultiSelect = false;
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.ReadOnly = true;
             this.dgvCustomers.RowHeadersVisible = false;
             this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomers.Size = new System.Drawing.Size(960, 480);
+            this.dgvCustomers.Size = new System.Drawing.Size(974, 480);
             this.dgvCustomers.TabIndex = 0;
             this.dgvCustomers.TabStop = false;
             this.dgvCustomers.SelectionChanged += new System.EventHandler(this.dgvCustomers_SelectionChanged);
@@ -109,7 +109,7 @@
             // lblFirst
             // 
             this.lblFirst.AutoSize = true;
-            this.lblFirst.Location = new System.Drawing.Point(336, 44);
+            this.lblFirst.Location = new System.Drawing.Point(337, 42);
             this.lblFirst.Name = "lblFirst";
             this.lblFirst.Size = new System.Drawing.Size(55, 13);
             this.lblFirst.TabIndex = 14;
@@ -160,7 +160,7 @@
             // lblStreetAddress
             // 
             this.lblStreetAddress.AutoSize = true;
-            this.lblStreetAddress.Location = new System.Drawing.Point(576, 42);
+            this.lblStreetAddress.Location = new System.Drawing.Point(577, 42);
             this.lblStreetAddress.Name = "lblStreetAddress";
             this.lblStreetAddress.Size = new System.Drawing.Size(75, 13);
             this.lblStreetAddress.TabIndex = 18;
@@ -183,7 +183,7 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(626, 68);
+            this.lblCity.Location = new System.Drawing.Point(628, 68);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(24, 13);
             this.lblCity.TabIndex = 20;
@@ -209,7 +209,7 @@
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(620, 98);
+            this.lblState.Location = new System.Drawing.Point(620, 97);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(32, 13);
             this.lblState.TabIndex = 24;
@@ -300,7 +300,7 @@
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(559, 154);
+            this.btnDelete.Location = new System.Drawing.Point(566, 154);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 11;
@@ -330,9 +330,9 @@
             // grpSearch
             // 
             this.grpSearch.Controls.Add(this.txtSearchString);
-            this.grpSearch.Location = new System.Drawing.Point(12, 214);
+            this.grpSearch.Location = new System.Drawing.Point(5, 214);
             this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Size = new System.Drawing.Size(342, 49);
+            this.grpSearch.Size = new System.Drawing.Size(349, 49);
             this.grpSearch.TabIndex = 36;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search";
@@ -373,7 +373,7 @@
             this.grpCustomer.Controls.Add(this.lblCity);
             this.grpCustomer.Location = new System.Drawing.Point(5, 9);
             this.grpCustomer.Name = "grpCustomer";
-            this.grpCustomer.Size = new System.Drawing.Size(967, 196);
+            this.grpCustomer.Size = new System.Drawing.Size(974, 196);
             this.grpCustomer.TabIndex = 37;
             this.grpCustomer.TabStop = false;
             this.grpCustomer.Text = "Create, Update, or Delete";

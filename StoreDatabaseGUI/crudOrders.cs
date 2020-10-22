@@ -51,6 +51,7 @@ namespace StoreDatabaseGUI
                 dgvOrders.DataSource = OrderDataTable; // Put the DataTable into the DataGridView
 
                 // Format the dgv
+                dgvOrders.Sort(dgvOrders.Columns["Created on"], ListSortDirection.Ascending);
                 dgvOrders.AutoResizeColumns();
                 dgvOrders.ClearSelection();
             }
@@ -71,8 +72,7 @@ namespace StoreDatabaseGUI
                 SqlCommand orderItemCommand = new SqlCommand(orderItemsQueryString, orderItemConnection);   // Create a SQL command with the query to be ran, and the database connection
                 orderItemConnection.Open();
                 SqlDataAdapter orderItemDa = new SqlDataAdapter(orderItemCommand); // Create a SqlDataAdapter and run the command, putting the result set in da
-                orderItemCommand.Parameters.Add("@OrderId", SqlDbType.Int);
-                orderItemCommand.Parameters["@OrderId"].Value = Convert.ToInt32(txtOrderId.Text);
+                orderItemCommand.Parameters.AddWithValue("@OrderId", Convert.ToInt32(txtOrderId.Text));
 
                 orderItemDa.Fill(OrderItemDataTable);
                 orderItemConnection.Close();
@@ -90,14 +90,10 @@ namespace StoreDatabaseGUI
 
         private void clearFields()
         {
-            txtOrderId.Text = "";
-            txtCustomerId.Text = "";
-            txtCustomerName.Text = "";
+            txtOrderId.Text = txtCustomerId.Text = txtCustomerName.Text = txtTotalPrice.Text = txtCreatedOn.Text = txtUpdatedOn.Text = txtSearchString.Text = "";
             cboOrderStatus.Text = null;
-            txtTotalPrice.Text = "";
-            txtCreatedOn.Text = "";
-            txtUpdatedOn.Text = "";
-            txtSearchString.Text = "";
+            btnDeleteOrder.Enabled = false;
+            dgvOrderItems.DataSource = null;
         }
         #endregion
 
@@ -105,12 +101,7 @@ namespace StoreDatabaseGUI
         private void Orders_Load(object sender, EventArgs e)
         {
             loadOrders();
-            btnDeleteOrder.Enabled = false; // property editor not working for some reason so disable this button on load
-        }
-
-        private void dgvOrders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
+            clearFields();
         }
 
         private void dgvOrders_SelectionChanged(object sender, EventArgs e)
@@ -132,10 +123,11 @@ namespace StoreDatabaseGUI
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            loadOrders();
             clearFields();
-            dgvOrders.ClearSelection();
-            OrderItemDataTable.Clear();
-            dgvOrderItems.Refresh();
+            //dgvOrders.ClearSelection();
+            //OrderItemDataTable.Clear();
+            //dgvOrderItems.Refresh();
             btnDeleteOrder.Enabled = false;
         }
 
@@ -170,6 +162,11 @@ namespace StoreDatabaseGUI
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             loadOrders();
+            clearFields();
+            //dgvOrders.ClearSelection();
+            //OrderItemDataTable.Clear();
+            //dgvOrderItems.Refresh();
+            btnDeleteOrder.Enabled = false;
         }
 
         private void btnDeleteOrder_Click(object sender, EventArgs e)

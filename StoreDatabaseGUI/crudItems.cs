@@ -87,6 +87,7 @@ namespace Customer_and_Order_Management
         private void ItemManagementForm_Load(object sender, EventArgs e)
         {
             loadData();
+            clearFields();
         }
 
         private void dgvItems_SelectionChanged(object sender, EventArgs e)
@@ -118,6 +119,7 @@ namespace Customer_and_Order_Management
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            dgvItems.ClearSelection();
             clearFields();
         }
 
